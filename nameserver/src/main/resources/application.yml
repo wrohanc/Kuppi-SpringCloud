@@ -1,0 +1,17 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: name-service
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

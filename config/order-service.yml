@@ -1,0 +1,12 @@
+server:
+  port: 8030
+
+#spring:
+#  zipkin:
+#    sender:
+#      type: kafka
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8050/eureka

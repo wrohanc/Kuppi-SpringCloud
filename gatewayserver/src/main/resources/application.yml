@@ -1,0 +1,43 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: orderService
+          uri: lb://order-service
+          predicates:
+            - Path=/order-api/**
+          filters:
+            - RequestLoggingFilter
+            - RewritePath=/order-api/(?<segment>.*), /$\{segment}
+        - id: priceService
+          uri: lb://price-service
+          predicates:
+            - Path=/price-api/**
+          filters:
+            - RequestLoggingFilter
+            - RewritePath=/price-api/(?<segment>.*), /$\{segment}
+        - id: inventoryService
+          uri: lb://inventory-service
+          predicates:
+            - Path=/inventory-api/**
+          filters:
+            - RequestLoggingFilter
+            - RewritePath=/inventory-api/(?<segment>.*), /$\{segment}
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: INFO
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8050/eureka
