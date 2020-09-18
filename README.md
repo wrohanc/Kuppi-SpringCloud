@@ -14,3 +14,5 @@ Simple Inventory management system is built using 3 business components(price, i
  - order -> Simple order management service for demo purposes.
  - price -> Simple price management service for demo purposes.
  - zipkinserver -> folder containing zipkin.jar for distributed tracing.
+ 
+ Rabbit MQ in background.
