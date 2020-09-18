@@ -3,7 +3,7 @@
 
 The purpose of this code is to demonstrate a simple inventory management system implemented in micro-service architecture. The primary focus is on micro-service architecture. So I have not used any databases to keep the code simple.
 
-Simple Inventory management system is built using 3 business components(price, inventory, and order). It has the following components to support micro-service architecture. (config-server, name-server, api-gatway, and tracing-server)
+Simple Inventory management system is built using 3 business components(price, inventory, and order). It has the following components to support micro-service architecture. (config-server, name-server, api-gatway-server, and tracing-server)
 
 #### Directories
  - config -> Centralized configuration files.
